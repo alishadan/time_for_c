@@ -1,0 +1,4 @@
+start_music:start.mp3
+duration_work:004 minute
+break_music:stop.mp3
+duration_break:030 seconds
