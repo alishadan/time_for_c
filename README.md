@@ -13,3 +13,7 @@ for exmaple for 10 minutes work and 1 minute break:
 you can change of sounds by replace your sound with sound in program folder.
 important: please never change file.txt, this crash program.
 
+<<<<<<< HEAD
+=======
+email: alishadan84@gmail.com
+>>>>>>> 6a12b5c5cd3f27168500d01ef3f07d4155232fde
