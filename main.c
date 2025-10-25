@@ -13,7 +13,7 @@ void config(void) {
 		"duration_break :1 minute 1 minute // only number and minimum is one minute;\n";
 	fprintf(file, arr);  //write arr on file.txt
 	fclose(file); //close file.txt
-	
+
 	// if user remove file.txt
 	//create a new file.txt or replaced with file.txt
 }
@@ -47,8 +47,8 @@ void read_file(char arr2[4][100]) {
 	else {
 		printf("Error reading input.");
 	}
-	
-	
+
+
 }
 void run(int w_time, int b_time) {
 	//this function run time_for_c program
@@ -70,7 +70,7 @@ void run(int w_time, int b_time) {
 	int a = getchar(); //we use of getchar function to give control to user for run the program
 	printf("for exite the program, enter 'ctrl+c' \n");
 	while (1) {
-		char quite=getchar();
+		char quite = getchar();
 		if (quite == "q") break;
 		//work time
 		printf("work time is started for %i minutes\n", w_time);
@@ -106,7 +106,7 @@ int check_requirements(void) {
 	file_handle = FindFirstFileA(file_name, &file_data);	//search for finding start.mp3
 	if (file_handle == INVALID_HANDLE_VALUE) {		//if dont exist start.mp3
 		printf("start.mp3 file does not have, please provide that");
-		return -1 ;
+		return -1;
 	}
 	file_handle = FindFirstFileA(file_name2, &file_data); //search for finding stop.mp3
 	if (file_handle == INVALID_HANDLE_VALUE) { //if dont exist start.mp3
@@ -121,7 +121,7 @@ int main(int argc, char* argv[]) {
 	check_requirements(); //check requirement for run the program
 	char arr2[4][100];  //array for save data saved in fil.txt, times and sounds
 	read_file(arr2); //function for read file.txt and save data in array with name arr2
-	
+
 	int w_time = atoi(arr2[1]);  // provided with file.txt //time for work time
 	int b_time = atoi(arr2[3]); //provided with file.txt /time for break time
 
