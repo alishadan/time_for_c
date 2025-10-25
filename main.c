@@ -34,8 +34,6 @@ void read_file(char arr2[4][100]) {
 						"please do not remove ':' in file.txt\n\n");
 					config(); // repair file.txt
 
-					void exit(int status);
-
 				}
 				else {
 
@@ -69,12 +67,10 @@ void run(int w_time, int b_time) {
 	// start program
 	printf("please enter a key and ENTER than program run \n");
 	int a = getchar(); //we use of getchar function to give control to user for run the program
-	//work time
-	ma_engine_play_sound(&engine, arr2[0], NULL); // this function play sound, arr2[0] is contain name of the sound
 	while (1) {
 		printf("work time is started for %i minutes\n", w_time);
 		if (strcmp(arr2[0], "start.mp3") == 0) {
-			ma_engine_play_sound(&engine, arr2[0], NULL);
+			ma_engine_play_sound(&engine, arr2[0], NULL);  // this function play sound, arr2[0] is contain name of the sound
 			Sleep(duration_work); //sleep accept data to miliseconds, we convert minutes in miliseconds before
 			printf("work time is finised\n");
 		}
