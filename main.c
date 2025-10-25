@@ -6,7 +6,7 @@
 #include <windows.h>
 void config(void) {
 	//this function reset file.txt 
-	FILE* file = fopen("file.txt", "w"); //opent or create file.txt for write in that
+	FILE* file = fopen("file.txt", "w"); //open or create file.txt for write in that
 	char arr[] = "start_music:start.mp3\n"
 		"duration_work:5 minute // only number and minimum is one minute;\n"
 		"break_music :stop.mp3\n"
