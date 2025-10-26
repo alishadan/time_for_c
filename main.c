@@ -13,7 +13,7 @@ void config(void) {
 		"duration_break :1 minute 1 minute // only number and minimum is one minute;\n";
 	fprintf(file, arr);  //write arr on file.txt
 	fclose(file); //close file.txt
-
+	
 	// if user remove file.txt
 	//create a new file.txt or replaced with file.txt
 }
@@ -47,8 +47,8 @@ void read_file(char arr2[4][100]) {
 	else {
 		printf("Error reading input.");
 	}
-
-
+	
+	
 }
 void run(int w_time, int b_time) {
 	//this function run time_for_c program
@@ -70,28 +70,18 @@ void run(int w_time, int b_time) {
 	int a = getchar(); //we use of getchar function to give control to user for run the program
 	printf("for exite the program, enter 'ctrl+c' \n");
 	while (1) {
-		char quite = getchar();
-		if (quite == "q") break;
 		//work time
 		printf("work time is started for %i minutes\n", w_time);
-		if (strcmp(arr2[0], "start.mp3") == 0) {
-			ma_engine_play_sound(&engine, arr2[0], NULL); // this function play sound, arr2[0] is contain name of the sound
-			Sleep(duration_work); //sleep accept data to miliseconds, we convert minutes in miliseconds before
-			printf("work time is finised\n");
-		}
-		else {
-			return;
+		ma_engine_play_sound(&engine, arr2[0], NULL); // this function play sound, arr2[0] is contain name of the sound
+		Sleep(duration_work); //sleep accept data to miliseconds, we convert minutes in miliseconds before
+		printf("work time is finised\n");
 
-		}
-		if (strcmp(arr2[2], "stop.mp3") == 0) {//break time
-			printf("break time is started for %i minutes \n", b_time);
-			ma_engine_play_sound(&engine, arr2[2], NULL);
-			Sleep(duration_break); //sleep accept data to miliseconds, we convert minutes in miliseconds before
-			printf("break time is finised\n");
-		}
-		else {
-			return;
-		}
+		//break time
+		printf("break time is started for %i minutes \n", b_time);
+		ma_engine_play_sound(&engine, arr2[2], NULL);
+		Sleep(duration_break); //sleep accept data to miliseconds, we convert minutes in miliseconds before
+		printf("break time is finised\n");
+	
 	}
 
 
@@ -105,12 +95,12 @@ int check_requirements(void) {
 	WIN32_FIND_DATAA file_data;		// information about start.mp3 or stop.mp3 saved
 	file_handle = FindFirstFileA(file_name, &file_data);	//search for finding start.mp3
 	if (file_handle == INVALID_HANDLE_VALUE) {		//if dont exist start.mp3
-		printf("start.mp3 file does not have, please provide that");
-		return -1;
+		printf("start.mp3 file does not have, please provide that\n");
+		return -1 ;
 	}
 	file_handle = FindFirstFileA(file_name2, &file_data); //search for finding stop.mp3
 	if (file_handle == INVALID_HANDLE_VALUE) { //if dont exist start.mp3
-		printf("stop.mp3 file does not have, please provide that");
+		printf("stop.mp3 file does not have, please provide that\n");
 		return -1;
 	}
 	return 1; // every thing is good
@@ -121,7 +111,7 @@ int main(int argc, char* argv[]) {
 	check_requirements(); //check requirement for run the program
 	char arr2[4][100];  //array for save data saved in fil.txt, times and sounds
 	read_file(arr2); //function for read file.txt and save data in array with name arr2
-
+	
 	int w_time = atoi(arr2[1]);  // provided with file.txt //time for work time
 	int b_time = atoi(arr2[3]); //provided with file.txt /time for break time
 

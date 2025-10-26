@@ -1,4 +1,4 @@
 start_music:start.mp3
-duration_work:004 minute
-break_music:stop.mp3
-duration_break:030 seconds
+duration_work:5 minute // only number and minimum is one minute;
+break_music :stop.mp3
+duration_break :1 minute 1 minute // only number and minimum is one minute;
