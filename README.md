@@ -1,10 +1,10 @@
 
-time_for_c is a program that manage your time to divide your time. 
+Pomodoroc is a program that manage your time to divide your time. 
 work time for time you work on that,
 break time for time you rest. 
 
-default values for work time is 5 minutes and to break time is 0.5 minutes, but you can change it.
-for run program, thats enough, open command window and go to folder of program and type ./time_for_c
+default values for work time is 5 minutes and to break time is 1 minutes, but you can change it.
+for run program, thats enough doble click on pomodoroc.exe or open command window and go to folder of program and type ./time_for_c
 for change values you can use of -w and -b options.
 -w is work time and -b is break time.
 
